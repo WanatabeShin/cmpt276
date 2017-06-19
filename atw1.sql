@@ -23,12 +23,13 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `first_name` varchar(20) NOT NULL,
-  `last_name` varchar(20) NOT NULL,
-  `user_id` varchar(15) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `user_id` int(20) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=big5;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,8 +38,37 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('John','Smith','jsmith');
+INSERT INTO `user` VALUES ('j.smith@gmail.com','password',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_profile`
+--
+
+DROP TABLE IF EXISTS `user_profile`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_profile` (
+  `user_id` int(20) NOT NULL,
+  `firstname` varchar(20) NOT NULL,
+  `lastname` varchar(20) NOT NULL,
+  `sex` enum('M','F') NOT NULL,
+  `height` int(8) NOT NULL,
+  `age` int(20) NOT NULL,
+  `profile_id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`profile_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=big5;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_profile`
+--
+
+LOCK TABLES `user_profile` WRITE;
+/*!40000 ALTER TABLE `user_profile` DISABLE KEYS */;
+INSERT INTO `user_profile` VALUES (1,'john','smith','M',183,21,1);
+/*!40000 ALTER TABLE `user_profile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-18 20:13:49
+-- Dump completed on 2017-06-19 15:46:49

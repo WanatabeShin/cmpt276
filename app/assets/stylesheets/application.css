@@ -13,3 +13,134 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    background-color: #313628;
+
+}
+
+li {
+
+    list-style: none;
+    display: inline-block
+}
+
+a {
+
+    text-decoration: none;
+    transition: all 500ms ease-in-out;
+}
+
+a:hover,
+a:active {
+
+    text-decoration: none;
+}
+
+h1,
+h2,
+h4 {
+    font-family: 'PT Sans Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+p {
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.btn {
+
+    transition: all 300ms ease-in-out;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+
+    background-color: #ededed !important;
+    color: #3c3c3c !important;
+    border: 1px solid #fff !important;
+}
+
+
+/*NAVIGATION*/
+
+
+.navbar {
+
+    background-color: #ADC698 !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.navbar a {
+
+    color: #343434 !important;
+    opacity: 0.7;
+}
+
+
+.navbar a:hover {
+
+    opacity: 1;
+    background-color: #F1F2EB !important;
+}
+
+/*HEADER*/
+
+.header {
+
+    height: 800px;
+    margin-top: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: #343434;
+    position: relative;
+    padding: 100px 15px 100px;
+    width: 100%;
+}
+
+.header h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+.header hr{
+    margin: 30px auto;
+}
+
+.btn{
+    background-color: #343434;
+    color: #fff;
+}
+
+.header p {
+    font-size: 125%;
+}
+
+.well{
+  background-color: #A4AC96;
+}
+
+.btn-info{
+  background-color: #343434 !important;
+}
+
+.well.custom-well-small { width: 500px; margin: 0 auto; }
